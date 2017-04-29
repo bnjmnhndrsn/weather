@@ -1,0 +1,8 @@
+- create virtualenv
+
+
+in postgres:
+
+```
+CREATE DATABASE hava_dev;
+```
