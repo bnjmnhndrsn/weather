@@ -1,8 +1,16 @@
 - create virtualenv
 
-
 in postgres:
 
 ```
 CREATE DATABASE hava_dev;
 ```
+
+Then:
+
+psql hava_dev
+CREATE EXTENSION postgis;
+
+Maybe do:
+
+brew install --upgrade gdal

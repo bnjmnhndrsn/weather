@@ -1,4 +1,4 @@
 ipdb
 Django==1.11
 psycopg2==2.5.4
-dj-database-url==0.3.0
+dj-database-url==0.4.2
