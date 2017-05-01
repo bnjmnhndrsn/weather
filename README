@@ -14,3 +14,12 @@ CREATE EXTENSION postgis;
 Maybe do:
 
 brew install --upgrade gdal
+
+
+Following these instructions:
+    https://gist.github.com/Belgabor/130e7770575e74581b67597fcb61717e
+
+Except:
+  - Not doing multiple settings environments
+  - Because Webpack 2.0, have to append "loader" on settings
+  - Have to change "resolve.modules"

@@ -2,3 +2,4 @@ ipdb
 Django==1.11
 psycopg2==2.5.4
 dj-database-url==0.4.2
+django-webpack-loader==0.4.1
