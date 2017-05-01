@@ -1,3 +1,11 @@
-var somethingElse = require('./something-else');
+import React from 'react';
+import ReactDOM from 'react-dom'
 
-console.log('hi');
+import App from './app';
+
+const container = document.getElementById('container');
+
+ReactDOM.render(
+  <App />,
+  container
+);
