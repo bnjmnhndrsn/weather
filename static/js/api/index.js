@@ -10,8 +10,16 @@ function searchLocations(query){
     });
 }
 
+function fetchDetail(id){
+    return axios({
+        method: 'GET',
+        url: `/json/locations/${id}/`
+    });
+}
+
 const API = {
-    searchLocations
+    searchLocations,
+    fetchDetail
 };
 
 export default API;
