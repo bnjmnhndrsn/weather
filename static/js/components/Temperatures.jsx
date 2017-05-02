@@ -16,17 +16,25 @@ const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
 
 export default class Temperatures extends Component {
     mapData () {
+        const { selected1, selected2 } = this.props;
+
         return MONTHS.map((month, i) => {
-            return {
-                name: month,
-                uv: [+this.props.min_data[i].temperature, +this.props.max_data[i].temperature]
-            };
+            const datum = {name: month};
+            if (selected1) {
+                Object.assign(datum, {[selected1.place_name]: [+selected1.min_data[i].temperature, +selected1.max_data[i].temperature]});
+            }
+
+            if (selected2) {
+                Object.assign(datum, {[selected2.place_name]: [+selected2.min_data[i].temperature, +selected2.max_data[i].temperature]});
+            }
+
+            return datum;
         });
     }
 
     render () {
         const data = this.mapData();
-
+        console.log(data);
       	return (
             <BarChart width={600} height={300} data={data}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}>
@@ -34,8 +42,15 @@ export default class Temperatures extends Component {
                 <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Legend />
-                <Bar dataKey="uv" fill="#82ca9d" />
+                {
+                    this.props.selected1 &&
+                    <Bar dataKey={this.props.selected1.place_name} fill="#82ca9d" />
+                }
+                {
+                    this.props.selected2 &&
+                    <Bar dataKey={this.props.selected2.place_name} fill="#9c27b0" />
+                }
             </BarChart>
         );
-  }
+    }
 }
