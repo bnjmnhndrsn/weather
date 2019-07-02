@@ -1,3 +1,4 @@
+- install virtualenv
 - create virtualenv
 
 in postgres:
@@ -11,10 +12,11 @@ Then:
 psql hava_dev
 CREATE EXTENSION postgis;
 
-Maybe do:
+expose DATABASE_URL (postgis://:@localhost:5432/hava_dev) and DEBUG (True) in environment variables
 
-brew install --upgrade gdal
+install other gis dependencies:
 
+https://docs.djangoproject.com/en/1.11/ref/contrib/gis/install/#homebrew
 
 Following these instructions:
     https://gist.github.com/Belgabor/130e7770575e74581b67597fcb61717e
