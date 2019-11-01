@@ -1,5 +1,5 @@
 ipdb
-Django==1.11.5
+Django==1.11.23
 psycopg2==2.7
 dj-database-url==0.4.2
 django-webpack-loader==0.4.1
